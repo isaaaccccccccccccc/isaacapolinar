@@ -81,7 +81,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .feature:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1.5fr)}
 .feature:nth-child(even) .shot{order:2}
 .feature .shot{aspect-ratio:16/9;background:color-mix(in srgb,var(--bg) 14%,var(--ink))}
-.feature .shot img{width:100%;height:100%;object-fit:cover;object-position:top}
+.feature .shot img,.feature .shot video{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .feature .info{padding:clamp(22px,4vw,40px);display:grid;gap:12px;align-content:center}
 .feature .eyebrow{color:color-mix(in srgb,var(--bg) 70%,var(--accent))}
 .feature h3{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800}

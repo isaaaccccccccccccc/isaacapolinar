@@ -1,5 +1,7 @@
 import brxdge from "./assets/optimized/brxdge.webp";
 import campus from "./assets/optimized/campus-creators.webp";
+import campusVideo from "./assets/campus-creators.mp4";
+import campusVideoWebm from "./assets/campus-creators.webm";
 import coffee from "./assets/optimized/sample1.webp";
 import mutya from "./assets/optimized/sample4.webp";
 import docreq from "./assets/optimized/sample3.webp";
@@ -14,6 +16,7 @@ export const PHONE = "+63 969 129 2138";
 export const LINKEDIN = "https://www.linkedin.com/in/john-isaac-apolinar/";
 
 // Large cards at the top of the work section. `status` is the small label above the name.
+// `video` is optional: a list of sources that plays muted on a loop, with `image` as the poster frame.
 export const featured = [
   {
     name: "BRXDGE",
@@ -25,10 +28,14 @@ export const featured = [
   {
     name: "Campus Creators",
     status: "Ongoing project",
-    text: "Connecting campuses to brands",
+    text: "Connecting brands to campuses",
     url: "https://campus-creators-production.up.railway.app",
     label: "campus-creators-production.up.railway.app",
     image: campus,
+    video: [
+      { src: campusVideo, type: "video/mp4" },
+      { src: campusVideoWebm, type: "video/webm" },
+    ],
   },
 ];
 
