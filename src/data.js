@@ -1,4 +1,5 @@
 import brxdge from "./assets/optimized/brxdge.webp";
+import campus from "./assets/optimized/campus-creators.webp";
 import coffee from "./assets/optimized/sample1.webp";
 import mutya from "./assets/optimized/sample4.webp";
 import docreq from "./assets/optimized/sample3.webp";
@@ -12,12 +13,24 @@ export const EMAIL = "johnisaacapolinar12@gmail.com";
 export const PHONE = "+63 969 129 2138";
 export const LINKEDIN = "https://www.linkedin.com/in/john-isaac-apolinar/";
 
-export const featured = {
-  name: "BRXDGE",
-  url: "https://brxdge-production.up.railway.app/",
-  label: "brxdge-production.up.railway.app",
-  image: brxdge,
-};
+// Large cards at the top of the work section. `status` is the small label above the name.
+export const featured = [
+  {
+    name: "BRXDGE",
+    status: "Live project",
+    url: "https://brxdge.ca",
+    label: "brxdge.ca",
+    image: brxdge,
+  },
+  {
+    name: "Campus Creators",
+    status: "Ongoing project",
+    text: "Connecting campuses to brands",
+    url: "https://campus-creators-production.up.railway.app",
+    label: "campus-creators-production.up.railway.app",
+    image: campus,
+  },
+];
 
 // To add a project: add an entry here. `stack` must match a key in `filters`.
 export const filters = [
