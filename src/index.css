@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* Tailwind v4 Dark Mode Support */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --primary: #06a2c1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer utilities {
+  .bg-primary {
+    background-color: var(--primary);
+  }
+
+  .text-primary {
+    color: var(--primary);
+  }
+
+  .border-primary {
+    border-color: var(--primary);
+  }
+
+  .from-primary {
+    --tw-gradient-from: var(--primary);
+  }
+
+  .to-primary {
+    --tw-gradient-to: var(--primary);
+  }
+
+  .via-primary {
+    --tw-gradient-via: var(--primary);
+  }
+}
+
+@keyframes navbarSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-navbar {
+  animation: navbarSlide 1s ease forwards;
+  animation-delay: 2.8s;
+  opacity: 0;
+}
