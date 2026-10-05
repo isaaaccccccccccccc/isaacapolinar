@@ -1,4 +1,6 @@
 import brxdge from "./assets/optimized/brxdge.webp";
+import brxdgeVideo from "./assets/brxdge.mp4";
+import brxdgeVideoWebm from "./assets/brxdge.webm";
 import campus from "./assets/optimized/campus-creators.webp";
 import campusVideo from "./assets/campus-creators.mp4";
 import campusVideoWebm from "./assets/campus-creators.webm";
@@ -21,9 +23,14 @@ export const featured = [
   {
     name: "BRXDGE",
     status: "Live project",
+    text: "Bridging talent to bigger opportunities",
     url: "https://brxdge.ca",
     label: "brxdge.ca",
     image: brxdge,
+    video: [
+      { src: brxdgeVideo, type: "video/mp4" },
+      { src: brxdgeVideoWebm, type: "video/webm" },
+    ],
   },
   {
     name: "Campus Creators",
