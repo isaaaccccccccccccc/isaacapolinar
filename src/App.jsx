@@ -1,67 +1,72 @@
+import { useEffect } from "react";
 
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { LayoutGroup } from "framer-motion";
-
-import IntroAnimation from "./components/IntroAnimation";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
-import Education from "./components/Education";
-import AboutSection from "./components/AboutSection";
-import Skills from "./components/Experience";
 import FeaturedWebsite from "./components/FeaturedWebsite";
 import Projects from "./components/ProjectsSection";
 import RateSection from "./components/RateSection";
+import AboutSection from "./components/AboutSection";
+import Experience from "./components/Experience";
+import Education from "./components/Education";
+import TechStack from "./components/TechStack";
 import Contact from "./components/ContactSection";
 import Footer from "./components/Footer";
 
-import TechStack from './components/TechStack';
-
 const App = () => {
+  // Fade sections in as they scroll into view. Anything already on screen stays visible.
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: false,
-      offset: 100,
+    if (!("IntersectionObserver" in window)) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const io = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.remove("pre");
+            io.unobserve(e.target);
+          }
+        }),
+      { rootMargin: "0px 0px -8% 0px" }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => {
+      if (el.getBoundingClientRect().top > window.innerHeight) {
+        el.classList.add("pre");
+        io.observe(el);
+      }
     });
+    return () => io.disconnect();
   }, []);
 
   return (
-    <LayoutGroup>
-      <div
-        className="
-          min-h-screen
-          bg-white
-          dark:bg-[#111827]
-          text-gray-900
-          dark:text-white
-          transition-colors
-          duration-300
-        "
-      >
-        <IntroAnimation />
-
-        <Header />
-
-        <main>
-          <HeroSection />
-          <Education />
-          <TechStack />
-
-          <AboutSection />
-          <Skills />
-          <FeaturedWebsite />
-          <Projects />
-          <RateSection />
-          <Contact />
-        </main>
-
-        <Footer />
-      </div>
-    </LayoutGroup>
+    <>
+      <Header />
+      <main id="top">
+        <HeroSection />
+        <section id="work" style={{ paddingTop: 0 }}>
+          <div className="wrap">
+            <div className="head reveal">
+              <span className="eyebrow">Selected work</span>
+              <h2>Sites and systems I've built.</h2>
+            </div>
+            <FeaturedWebsite />
+            <Projects />
+          </div>
+        </section>
+        <RateSection />
+        <section id="about">
+          <div className="wrap">
+            <AboutSection />
+            <div className="two reveal">
+              <Experience />
+              <Education />
+            </div>
+          </div>
+        </section>
+        <TechStack />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 };
 
 export default App;
-
