@@ -71,8 +71,8 @@ export const projects = [
 
 export const plans = [
   { tier: "Starter", name: "Landing Page", cad: "$350", php: "₱14,000", features: ["Single-page responsive site", "Up to 5 sections (hero, about, services, etc.)", "Mobile, tablet & desktop optimized", "Basic SEO setup", "1 round of revisions", "3–5 day turnaround"] },
-  { tier: "Standard", name: "Business Website", cad: "$700", php: "₱28,000", popular: true, features: ["Up to 5 pages (multi-page site)", "React-based, fully responsive", "Contact form & basic animations", "On-page SEO & performance tuning", "2 rounds of revisions", "1–2 week turnaround"] },
-  { tier: "Premium", name: "Full-Stack Web App", cad: "$1,200", php: "₱48,000", features: ["Custom web app with backend & database", "User authentication & admin dashboard", "API integrations as needed", "Deployment & hosting setup support", "3 rounds of revisions", "2–4 week turnaround"] },
+  { tier: "Standard", name: "Business Website", cad: "$850", php: "₱34,000", popular: true, features: ["Up to 5 pages (multi-page site)", "React-based, fully responsive", "Contact form & basic animations", "On-page SEO & performance tuning", "2 rounds of revisions", "1–2 week turnaround"] },
+  { tier: "Premium", name: "Full-Stack Web App", custom: true, features: ["Custom web app with backend & database", "User authentication & admin dashboard", "API integrations as needed", "Deployment & hosting setup support", "3 rounds of revisions", "2–4 week turnaround"] },
 ];
 
 export const experience = [
