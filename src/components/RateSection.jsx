@@ -23,13 +23,20 @@ const RateSection = () => (
               {plan.tier} {plan.popular && <em>Most popular</em>}
             </div>
             <h3>{plan.name}</h3>
-            <div>
-              <div className="price">
-                {plan.cad}
-                <small>CAD</small>
+            {plan.custom ? (
+              <div>
+                <div className="price">Custom</div>
+                <div className="php">Quoted per project</div>
               </div>
-              <div className="php">≈ {plan.php} PHP</div>
-            </div>
+            ) : (
+              <div>
+                <div className="price">
+                  {plan.cad}
+                  <small>CAD</small>
+                </div>
+                <div className="php">≈ {plan.php} PHP</div>
+              </div>
+            )}
             <ul>
               {plan.features.map((f) => (
                 <li key={f}>{f}</li>
