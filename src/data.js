@@ -103,6 +103,7 @@ export const education = [
 export const skills = [
   {
     group: "Virtual assistance",
+    visual: "assistant",
     icon: Headset,
     lead: "Day-to-day support that keeps a business running.",
     items: [
@@ -115,6 +116,7 @@ export const skills = [
   },
   {
     group: "Web",
+    visual: "web",
     icon: MonitorSmartphone,
     lead: "Sites and systems built to be used, not just looked at.",
     items: [

@@ -1,4 +1,5 @@
 import { skills, languages } from "../data";
+import SkillVisual from "./SkillVisual";
 
 const SkillsSection = () => (
   <section id="skills">
@@ -13,6 +14,7 @@ const SkillsSection = () => (
       <div className="skill-groups reveal">
         {skills.map((g) => (
           <div className="skill-group" key={g.group}>
+            <SkillVisual kind={g.visual} />
             <div className="skill-head">
               <span className="skill-badge" aria-hidden="true">
                 <g.icon size={26} strokeWidth={1.75} />
