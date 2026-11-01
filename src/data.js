@@ -87,6 +87,32 @@ export const education = [
   { when: "2020 – 2021", title: "K-12 Senior High, ICT", school: "AMA Computer College, Tarlac", honor: "Academic excellence", text: "Practical skills in computers, digital tools, networking, programming, and multimedia." },
 ];
 
+// Skills section. Taken from Isaac's resume.
+export const skills = [
+  {
+    group: "Virtual assistance",
+    lead: "Day-to-day support that keeps a business running.",
+    items: [
+      { name: "Chat support", text: "Answering customers quickly and clearly across chat channels." },
+      { name: "Email management", text: "Inbox triage, replies, follow-ups and outreach campaigns." },
+      { name: "Social media management", text: "Posting, engagement and outreach on LinkedIn and Instagram." },
+      { name: "Outbound and cold calling", text: "Reaching new leads and following up by phone." },
+      { name: "Admin support", text: "Data entry, scheduling and organized, confidential records." },
+    ],
+  },
+  {
+    group: "Web",
+    lead: "Sites and systems built to be used, not just looked at.",
+    items: [
+      { name: "Web design", text: "Clean, responsive layouts that fit the brand." },
+      { name: "Web development", text: "React front ends, PHP and Python back ends, and databases." },
+      { name: "Technical tools", text: "Comfortable across the tools a modern team runs on." },
+    ],
+  },
+];
+
+export const languages = ["English", "Tagalog"];
+
 export const toolbox = [
   { group: "Front end", items: ["HTML5", "CSS3", "JavaScript", "React JS", "Tailwind CSS"] },
   { group: "Back end & data", items: ["Node JS", "Python", "PHP", "SQL"] },

@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import FeaturedWebsite from "./components/FeaturedWebsite";
 import Projects from "./components/ProjectsSection";
+import SkillsSection from "./components/SkillsSection";
 import RateSection from "./components/RateSection";
 import AboutSection from "./components/AboutSection";
 import Experience from "./components/Experience";
@@ -51,6 +52,7 @@ const App = () => {
             <Projects />
           </div>
         </section>
+        <SkillsSection />
         <RateSection />
         <section id="about">
           <div className="wrap">

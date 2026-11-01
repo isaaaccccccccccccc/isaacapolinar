@@ -15,13 +15,60 @@
     <script>
       try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
     </script>
+    <style>
+      /* Intro loader: plain HTML so it shows before the app's code loads. Removed by the script at the end of body. */
+      #intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:#0b1422;color:#e8eef7;
+        transition:opacity .5s ease,visibility .5s ease}
+      #intro.done{opacity:0;visibility:hidden}
+      #intro .box{display:grid;gap:18px;width:min(320px,80vw)}
+      #intro .mark{font:800 clamp(2.6rem,9vw,3.6rem)/1 "Bricolage Grotesque","Segoe UI",system-ui,sans-serif;letter-spacing:-.03em;
+        opacity:0;transform:translateY(10px);animation:introIn .6s .1s ease forwards}
+      #intro .mark i{font-style:normal;color:#74a8ff}
+      #intro .bar{height:3px;border-radius:3px;background:#26374f;overflow:hidden}
+      #intro .bar span{display:block;height:100%;width:100%;background:#74a8ff;transform:scaleX(0);transform-origin:left;
+        animation:introBar 1.1s .2s cubic-bezier(.6,.1,.3,1) forwards}
+      #intro .line{font:400 .8rem "JetBrains Mono",ui-monospace,Consolas,monospace;color:#97a6bc;min-height:1.2em}
+      @keyframes introIn{to{opacity:1;transform:none}}
+      @keyframes introBar{to{transform:scaleX(1)}}
+      html.intro-on body{overflow:hidden}
+      @media (prefers-reduced-motion:reduce){#intro{display:none}}
+    </style>
   </head>
   <body>
     <!-- Static copy of the contact form so Netlify Forms can detect it at build time -->
     <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
       <input name="bot-field" /><input name="name" /><input name="email" /><input name="subject" /><textarea name="message"></textarea>
     </form>
+    <div id="intro" aria-hidden="true">
+      <div class="box">
+        <div class="mark">IsaacDev<i>.</i></div>
+        <div class="bar"><span></span></div>
+        <div class="line" id="introLine">$ ping isaacapolinar</div>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Shows the intro once per visit, for at least 1.4s and never more than 3.5s.
+      (function () {
+        var el = document.getElementById("intro"), root = document.documentElement;
+        var seen = false;
+        try { seen = sessionStorage.getItem("introSeen") === "1"; } catch (e) {}
+        if (seen || matchMedia("(prefers-reduced-motion: reduce)").matches) { el.remove(); return; }
+        root.classList.add("intro-on");
+        var line = document.getElementById("introLine"), start = Date.now(), closed = false;
+        setTimeout(function () { line.textContent = "reply from Tarlac, PH · ready"; }, 900);
+        function close() {
+          if (closed) return; closed = true;
+          try { sessionStorage.setItem("introSeen", "1"); } catch (e) {}
+          el.classList.add("done"); root.classList.remove("intro-on");
+          setTimeout(function () { el.remove(); }, 600);
+        }
+        function whenReady() { setTimeout(close, Math.max(0, 1400 - (Date.now() - start))); }
+        if (document.readyState === "complete") whenReady(); else addEventListener("load", whenReady);
+        setTimeout(close, 3500);
+        el.addEventListener("click", close);
+      })();
+    </script>
   </body>
 </html>
