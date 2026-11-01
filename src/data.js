@@ -1,3 +1,15 @@
+import {
+  MessagesSquare,
+  Mail,
+  Megaphone,
+  PhoneOutgoing,
+  ClipboardList,
+  Palette,
+  CodeXml,
+  Wrench,
+  Headset,
+  MonitorSmartphone,
+} from "lucide-react";
 import brxdge from "./assets/optimized/brxdge.webp";
 import brxdgeVideo from "./assets/brxdge.mp4";
 import brxdgeVideoWebm from "./assets/brxdge.webm";
@@ -91,22 +103,26 @@ export const education = [
 export const skills = [
   {
     group: "Virtual assistance",
+    visual: "assistant",
+    icon: Headset,
     lead: "Day-to-day support that keeps a business running.",
     items: [
-      { name: "Chat support", text: "Answering customers quickly and clearly across chat channels." },
-      { name: "Email management", text: "Inbox triage, replies, follow-ups and outreach campaigns." },
-      { name: "Social media management", text: "Posting, engagement and outreach on LinkedIn and Instagram." },
-      { name: "Outbound and cold calling", text: "Reaching new leads and following up by phone." },
-      { name: "Admin support", text: "Data entry, scheduling and organized, confidential records." },
+      { icon: MessagesSquare, name: "Chat support", text: "Answering customers quickly and clearly across chat channels." },
+      { icon: Mail, name: "Email management", text: "Inbox triage, replies, follow-ups and outreach campaigns." },
+      { icon: Megaphone, name: "Social media management", text: "Posting, engagement and outreach on LinkedIn and Instagram." },
+      { icon: PhoneOutgoing, name: "Outbound and cold calling", text: "Reaching new leads and following up by phone." },
+      { icon: ClipboardList, name: "Admin support", text: "Data entry, scheduling and organized, confidential records." },
     ],
   },
   {
     group: "Web",
+    visual: "web",
+    icon: MonitorSmartphone,
     lead: "Sites and systems built to be used, not just looked at.",
     items: [
-      { name: "Web design", text: "Clean, responsive layouts that fit the brand." },
-      { name: "Web development", text: "React front ends, PHP and Python back ends, and databases." },
-      { name: "Technical tools", text: "Comfortable across the tools a modern team runs on." },
+      { icon: Palette, name: "Web design", text: "Clean, responsive layouts that fit the brand." },
+      { icon: CodeXml, name: "Web development", text: "React front ends, PHP and Python back ends, and databases." },
+      { icon: Wrench, name: "Technical tools", text: "Comfortable across the tools a modern team runs on." },
     ],
   },
 ];
