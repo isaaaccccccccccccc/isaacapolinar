@@ -169,3 +169,18 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
 .reveal{transition:opacity .6s,transform .6s}
 .reveal.pre{opacity:0;transform:translateY(18px)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.reveal.pre{opacity:1;transform:none}}
+
+/* skills */
+.skill-groups{display:grid;align-items:start;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:22px}
+.skill-group{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(20px,3vw,30px);display:grid;gap:20px;align-content:start}
+.skill-head{display:grid;gap:6px}
+.skill-head h3{font-size:1.5rem}
+.skill-head p{color:var(--muted);font-size:.95rem}
+.skill-list{list-style:none;margin:0;padding:0;display:grid;border-top:1px solid var(--line)}
+.skill-list li{display:grid;grid-template-columns:minmax(0,11em) minmax(0,1fr);gap:4px 18px;padding:13px 0;border-bottom:1px solid var(--line)}
+.skill-list b{font-weight:600}
+.skill-list span{color:var(--muted);font-size:.95rem}
+@media (max-width:520px){.skill-list li{grid-template-columns:1fr}}
+.langs{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:26px}
+.langs .eyebrow{margin-right:6px}
+.lang{font-weight:500;background:var(--tint);padding:6px 14px;border-radius:999px}

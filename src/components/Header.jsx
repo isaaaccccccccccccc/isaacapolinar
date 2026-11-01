@@ -21,6 +21,7 @@ const Header = () => (
       </a>
       <nav className="nav" aria-label="Sections">
         <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
         <a href="#rates">Rates</a>
         <a href="#about">About</a>
         <a href="#toolbox">Toolbox</a>
