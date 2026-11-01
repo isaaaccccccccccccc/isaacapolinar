@@ -14,14 +14,24 @@ const SkillsSection = () => (
         {skills.map((g) => (
           <div className="skill-group" key={g.group}>
             <div className="skill-head">
-              <h3>{g.group}</h3>
-              <p>{g.lead}</p>
+              <span className="skill-badge" aria-hidden="true">
+                <g.icon size={26} strokeWidth={1.75} />
+              </span>
+              <div>
+                <h3>{g.group}</h3>
+                <p>{g.lead}</p>
+              </div>
             </div>
             <ul className="skill-list">
               {g.items.map((s) => (
                 <li key={s.name}>
-                  <b>{s.name}</b>
-                  <span>{s.text}</span>
+                  <span className="skill-icon" aria-hidden="true">
+                    <s.icon size={20} strokeWidth={1.75} />
+                  </span>
+                  <div>
+                    <b>{s.name}</b>
+                    <span>{s.text}</span>
+                  </div>
                 </li>
               ))}
             </ul>
