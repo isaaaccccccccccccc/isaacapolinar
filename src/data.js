@@ -91,7 +91,7 @@ export const experience = [
   { when: "May 2026", role: "Virtual Assistant", where: "Freelance" },
   { when: "Sept 2025 – May 2026", role: "Technical Support Representative", where: "Kalesa Halo" },
   { when: "July 2025 – Sept 2025", role: "General VA", where: "Luxury LLC, TaxMedicsER" },
-  { when: "July 2025", role: "Web Developer Coach", where: "Prestige Virtual Pro" },
+  { when: "July 2025", role: "Web Developer", where: "Freelance" },
 ];
 
 export const education = [
