@@ -235,3 +235,26 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-betw
 .sc-phone .blk{height:18px;border-radius:5px;background:var(--tint)}
 @media (max-width:440px){.scene{font-size:.72rem}.scene-va{grid-template-columns:1fr}.sc-chat .bubble.in.typing{display:none}}
 @media (max-width:520px){.scene-web{grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto}.sc-browser{grid-row:auto}.sc-code{display:none}}
+
+/* offline systems */
+.offline-list{display:grid;gap:22px}
+.offline-card{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.offline-card:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1.5fr)}
+.offline-card:nth-child(even) .stage{order:2}
+.offline-card .stage{position:relative;min-height:360px;background:#0b1422;overflow:hidden}
+.offline-card.phone .stage{min-height:460px}
+.offline-card video{position:absolute;display:block;object-fit:cover;object-position:top}
+.offline-card.wide video{inset:0;width:100%;height:100%}
+.offline-card.phone .stage{background:radial-gradient(120% 90% at 30% 10%,#1d3a70,#0b1422)}
+.offline-card.phone video{top:7%;bottom:7%;left:50%;transform:translateX(-50%);height:86%;width:auto;aspect-ratio:520/812;
+  border-radius:22px;border:6px solid #26374f;box-shadow:0 24px 50px -20px #000}
+.offline-card .info{padding:clamp(22px,4vw,40px);display:grid;gap:10px;align-content:center}
+.offline-card h3{font-size:clamp(1.7rem,3.6vw,2.3rem);font-weight:800}
+.offline-card .event{font:400 .82rem var(--mono);color:var(--muted)}
+.offline-card p{color:var(--muted);font-size:.97rem}
+.offline-tag{display:inline-flex;align-items:center;gap:7px;justify-self:start;font:500 .72rem var(--mono);letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ok);background:color-mix(in srgb,var(--ok) 14%,transparent);padding:5px 10px;border-radius:999px}
+.offline-card .tags{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.offline-card .tags li{font:400 .74rem var(--mono);color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:3px 8px}
+@media (max-width:760px){.offline-card,.offline-card:nth-child(even){grid-template-columns:1fr}.offline-card:nth-child(even) .stage{order:0}
+  .offline-card.wide .stage{min-height:0;aspect-ratio:16/9}.offline-card.phone .stage{min-height:480px}}

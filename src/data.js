@@ -10,6 +10,12 @@ import {
   Headset,
   MonitorSmartphone,
 } from "lucide-react";
+import worshipPoster from "./assets/optimized/worship-intercom.webp";
+import worshipVideo from "./assets/worship-intercom.mp4";
+import worshipVideoWebm from "./assets/worship-intercom.webm";
+import pageantPoster from "./assets/optimized/pageant-tabulation.webp";
+import pageantVideo from "./assets/pageant-tabulation.mp4";
+import pageantVideoWebm from "./assets/pageant-tabulation.webm";
 import brxdge from "./assets/optimized/brxdge.webp";
 import brxdgeVideo from "./assets/brxdge.mp4";
 import brxdgeVideoWebm from "./assets/brxdge.webm";
@@ -54,6 +60,35 @@ export const featured = [
     video: [
       { src: campusVideo, type: "video/mp4" },
       { src: campusVideoWebm, type: "video/webm" },
+    ],
+  },
+];
+
+// Offline systems: run on a local network (a computer as the server, a router for the devices), so there is no
+// public link. `shape` is "phone" for a mobile-width app and "wide" for a desktop one.
+export const offlineProjects = [
+  {
+    name: "Pageant Tabulation",
+    event: "Mutya ng Maligaya 2027",
+    shape: "wide",
+    text: "Judges sign in with a PIN and score each contestant from their own tablet or phone. The tabulator runs each segment live, sees the results as scores come in, and controls what the projector shows the audience.",
+    features: ["Judge PIN sign-in", "Live scoring", "Instant results", "Projector display"],
+    image: pageantPoster,
+    video: [
+      { src: pageantVideo, type: "video/mp4" },
+      { src: pageantVideoWebm, type: "video/webm" },
+    ],
+  },
+  {
+    name: "Worship Intercom",
+    event: "For a church worship team",
+    shape: "phone",
+    text: "A push-to-talk intercom on the musicians' phones. The leader talks into their ears, calls the next song part, and starts a shared metronome for everyone, with noise cancellation for a loud stage.",
+    features: ["Push to talk", "Song part cues", "Shared metronome", "Noise cancellation"],
+    image: worshipPoster,
+    video: [
+      { src: worshipVideo, type: "video/mp4" },
+      { src: worshipVideoWebm, type: "video/webm" },
     ],
   },
 ];
